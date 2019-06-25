@@ -1,0 +1,287 @@
+module Nebula4x.Utils.GeneratorHelper where
+
+import           System.Random
+
+adjectives :: [String]
+adjectives =
+  [ "Admiring"
+  , "Adoring"
+  , "Affectionate"
+  , "Agitated"
+  , "Amazing"
+  , "Angry"
+  , "Awesome"
+  , "Blissful"
+  , "Bold"
+  , "Boring"
+  , "Brave"
+  , "Charming"
+  , "Clever"
+  , "Cocky"
+  , "Cool"
+  , "Compassionate"
+  , "Competent"
+  , "Condescending"
+  , "Confident"
+  , "Cranky"
+  , "Crazy"
+  , "Dazzling"
+  , "Determined"
+  , "Distracted"
+  , "Dreamy"
+  , "Eager"
+  , "Ecstatic"
+  , "Elastic"
+  , "Elated"
+  , "Elegant"
+  , "Eloquent"
+  , "Epic"
+  , "Exciting"
+  , "Fervent"
+  , "Festive"
+  , "Flamboyant"
+  , "Focused"
+  , "Friendly"
+  , "Frosty"
+  , "Gallant"
+  , "Gifted"
+  , "Goofy"
+  , "Gracious"
+  , "Happy"
+  , "Hardcore"
+  , "Heavenly"
+  , "Heuristic"
+  , "Hopeful"
+  , "Hungry"
+  , "Infallible"
+  , "Inspiring"
+  , "Jolly"
+  , "Jovial"
+  , "Keen"
+  , "Kind"
+  , "Laughing"
+  , "Loving"
+  , "Lucid"
+  , "Luminous"
+  , "Magical"
+  , "Mystifying"
+  , "Modest"
+  , "Musing"
+  , "Naughty"
+  , "Nervous"
+  , "Nifty"
+  , "Nostalgic"
+  , "Objective"
+  , "Optimistic"
+  , "Peaceful"
+  , "Pedantic"
+  , "Pensive"
+  , "Practical"
+  , "Priceless"
+  , "Quirky"
+  , "Quizzical"
+  , "Recursing"
+  , "Relaxed"
+  , "Reverent"
+  , "Romantic"
+  , "Sad"
+  , "Serene"
+  , "Sharp"
+  , "Silly"
+  , "Sleepy"
+  , "Stoic"
+  , "Stupefied"
+  , "Suspicious"
+  , "Sweet"
+  , "Tender"
+  , "Thirsty"
+  , "Trusting"
+  , "Unruffled"
+  , "Upbeat"
+  , "Vibrant"
+  , "Vigilant"
+  , "Vigorous"
+  , "Wizardly"
+  , "Wandering"
+  , "Wonderful"
+  , "Xenodochial"
+  , "Youthful"
+  , "Zealous"
+  , "Zen"
+  ]
+
+starNouns :: [String]
+starNouns =
+  [ "Beacon"
+  , "Disco Ball"
+  , "Element Fuser"
+  , "Flames"
+  , "Flare"
+  , "Flash"
+  , "Glow"
+  , "Incandescence"
+  , "Incendiary"
+  , "Inferno"
+  , "Lamp"
+  , "Lantern"
+  , "Lightbulb"
+  , "Lightbringer"
+  , "Metalmelter"
+  , "Nuclear Sphere"
+  , "Shine"
+  , "Skytorch"
+  , "Spark"
+  , "Tinder"
+  , "Waterkiller"
+  ]
+
+bodyNouns :: [String]
+bodyNouns =
+  [ "Apple"
+  , "Bedrock"
+  , "Body"
+  , "Boulder"
+  , "Cobblestone"
+  , "Crag"
+  , "Crust"
+  , "Dust"
+  , "Earth"
+  , "Globe"
+  , "Gravel"
+  , "Lava"
+  , "Marble"
+  , "Metal"
+  , "Orb"
+  , "Ore"
+  , "Pebble"
+  , "Planetoid"
+  , "Rock"
+  , "Rubble"
+  , "Slab"
+  , "Slag"
+  , "Sphere"
+  , "Terrene"
+  , "World"
+  ]
+
+shipNouns :: [String]
+shipNouns =
+  [ "Ark"
+  , "Bark"
+  , "Barge"
+  , "Bateau"
+  , "Blimp"
+  , "Bucket"
+  , "Canoe"
+  , "Catamaran"
+  , "Craft"
+  , "Dinghy"
+  , "Dory"
+  , "Gondola"
+  , "Hulk"
+  , "Lifeboat"
+  , "Liner"
+  , "Peashooter"
+  , "Raft"
+  , "Sailboat"
+  , "Saucer"
+  , "Schooner"
+  , "Skiff"
+  , "Sloop"
+  , "Steamboat"
+  , "Tanker"
+  , "Tub"
+  , "Yacht"
+  ]
+
+engineNouns :: [String]
+engineNouns =
+  [ "Combuster"
+  , "Drive"
+  , "Gasguzzler"
+  , "Machinery"
+  , "Mechanical Powerhouse"
+  , "Metal Block"
+  , "Noisemaker"
+  , "Powermaker"
+  , "Shipmover"
+  , "Propeller"
+  , "Spacewarper"
+  , "Thomas"
+  ]
+
+missleLauncherNouns :: [String]
+missleLauncherNouns =
+  [ "BFG"
+  , "Blaster"
+  , "Cannon"
+  , "Equalizer"
+  , "Firemaker"
+  , "Gun"
+  , "Hammer"
+  , "Handgun"
+  , "Hardware"
+  , "Launcher"
+  , "Magnum"
+  , "Mortar"
+  , "Musket"
+  , "Ordnance"
+  , "Peacekiller"
+  , "Peashooter"
+  , "Persuader"
+  , "Piece"
+  , "Pistol"
+  , "Potato Cannon"
+  , "Revolver"
+  , "Rifle"
+  , "Rocket Conjurer"
+  , "Rocket Evoker"
+  , "Rocket Launcher"
+  , "Shotgun"
+  , "Uzi"
+  ]
+
+laserNouns :: [String]
+laserNouns =
+  [ "Beam"
+  , "Blaster"
+  , "Blazer"
+  , "Death Ray"
+  , "Glitter"
+  , "Final Flash"
+  , "Flicker"
+  , "Laser"
+  , "Moonbeam"
+  , "Pew-Pew"
+  , "Photon Bomber"
+  , "Ray"
+  , "Sparkle"
+  , "Special Beam Cannon"
+  , "Sunbeam"
+  , "Twinkle"
+  ]
+
+generateName :: RandomGen g => g -> [String] -> [String] -> (String, g)
+generateName g leftList rightList = (randomName, rightG)
+ where
+  (leftIndex, leftG) = randomR (0, length leftList - 1) g
+  (rightIndex, rightG) = randomR (0, length rightList - 1) leftG
+  randomName = (leftList !! leftIndex) ++ " " ++ (rightList !! rightIndex)
+
+generateStarName :: RandomGen g => g -> (String, g)
+generateStarName g = generateName g adjectives starNouns
+
+generateBodyName :: RandomGen g => g -> (String, g)
+generateBodyName g = generateName g adjectives bodyNouns
+
+generateShipName :: RandomGen g => g -> (String, g)
+generateShipName g = generateName g adjectives shipNouns
+
+generateEngineName :: RandomGen g => g -> (String, g)
+generateEngineName g = generateName g adjectives engineNouns
+
+generateMissleLauncherName :: RandomGen g => g -> (String, g)
+generateMissleLauncherName g = generateName g adjectives missleLauncherNouns
+
+generateLaserName :: RandomGen g => g -> (String, g)
+generateLaserName g = generateName g adjectives laserNouns

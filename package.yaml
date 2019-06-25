@@ -1,0 +1,96 @@
+name:                nebula4x
+version:             0.1.0.0
+github:              "edouardpoitras/nebula4x"
+license:             BSD3
+author:              "Edouard Poitras"
+maintainer:          "edouardpoitras@gmail.com"
+copyright:           "2019 Edouard Poitras"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/edouardpoitras/nebula4x#readme>
+
+dependencies:
+- aeson
+- base
+- blaze-html
+- bytestring
+- clay
+- containers
+- data-default-class
+- http-types
+- lens
+- linear
+- microlens
+- mtl
+- newtype-generics
+- open-browser
+- parallel
+- pretty-simple
+- random
+- scotty
+- random-shuffle
+- stm
+- text
+- time
+- vector
+- wai
+- wai-cors
+- wai-extra
+- wai-middleware-static
+
+library:
+  source-dirs: src
+  ghc-options:
+  - -O2
+  - -fwarn-unused-binds
+  - -fwarn-unused-imports
+  - -fwarn-orphans
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wpartial-fields
+  - -Wredundant-constraints
+
+executables:
+  nebula4x-server:
+    main:                Main.hs
+    source-dirs:         server
+    ghc-options:
+    - -O2
+    - -fwarn-unused-binds
+    - -fwarn-unused-imports
+    - -fwarn-orphans
+    - -Wall
+    - -Wcompat
+    - -Widentities
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wpartial-fields
+    - -Wredundant-constraints
+    dependencies:
+    - nebula4x
+
+tests:
+  nebula4x-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -O2
+    - -fprof-auto
+    - -fprof-cafs
+    - -fwarn-unused-binds
+    - -fwarn-unused-imports
+    - -fwarn-orphans
+    dependencies:
+    - nebula4x

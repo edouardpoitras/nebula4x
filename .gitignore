@@ -1,0 +1,10 @@
+.stack-work/
+*~
+.vscode
+nebula4x.cabal
+tags
+*.prof
+*.hp
+*.ps
+*.aux
+*.html
