@@ -18,7 +18,7 @@ Run the following command to build:
 
 Start the game server with the following command:
 
-    stack exec nebula4x
+    stack exec nebula4x-server
 
 Now that the server is running, you can fire up the [Web UI](https://github.com/edouardpoitras/nebula4x-webui) to play the game.
 
